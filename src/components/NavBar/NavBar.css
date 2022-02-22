@@ -1,0 +1,18 @@
+header{
+    padding: 0%;
+    background-color: #2b2b2b;
+    display: flex;
+}
+
+ul{
+    padding: 0%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+li{
+    color: white;
+    align-self: flex-start;
+}
