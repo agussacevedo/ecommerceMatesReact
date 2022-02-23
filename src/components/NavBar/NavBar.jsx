@@ -5,10 +5,10 @@ const NavBar = () => {
  return(
         <header>
             <ul>
-                <li>Termeras</li>
-                <li>Mates</li>
-                <li>Bombillas</li>
-                <li>Otros</li>
+            <li><a href="../public/index.html"><h3>Termeras</h3></a></li>
+            <li><a href="../public/index.html"><h3>Mates</h3></a></li>
+            <li><a href="../public/index.html"><h3>Bombillas</h3></a></li>
+            <li><a href="../public/index.html"><h3>Otros</h3></a></li>
             </ul>
         </header>
     )
