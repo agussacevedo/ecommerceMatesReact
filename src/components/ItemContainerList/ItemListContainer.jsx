@@ -11,24 +11,28 @@
         
 // export class ItemListContainer extends Component {
 // render () {
-import React, {useEffect, useState} from 'react';
+
+import React from 'react';
 import './ItemListContainer.css'
+import ItemCount from './ItemCount';
 
-function ItemListContainer  ( {greeting} ) {
-return (
-<div>
-    <center>
-    <h2>{greeting}</h2>
-    </center>
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
-)
+
+// function ItemListContainer  ( {greeting} ) {
+
+    // const [count, setCount] = useState(0) 
+    // let fecha = Date()
+
+    // const handleCount = () => {
+    //     setCount(count+1)
+    // }
+
+const ItemListContainer = () => {    
+    return (
+        <div>
+            <ItemCount></ItemCount>
+        </div>
+    )
 }
-
-
+        
+        
 export default ItemListContainer

@@ -1,4 +1,4 @@
-header{
+ header{
     max-height: fit-content;
     padding: 0%;
     background-color: #2b2b2b;
@@ -28,10 +28,16 @@ h3{
     padding-left: 3%;
 }
 
+.Mate{
+    width: auto;
+    height: auto;
+}
+
 img{
     height: 3em;
 }
 
-h2{
-    background-color: saddlebrown;
+.Item{
+    display: flex;
+    justify-content: center;
 }
