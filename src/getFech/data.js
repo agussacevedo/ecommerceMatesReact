@@ -6,17 +6,15 @@ export const productos = [
     { id: 5,  foto:'https://images.vexels.com/media/users/3/212928/isolated/preview/6c3b4f2bdc20b6cdc04e609ba4d77273-dibujado-a-mano-copa-de-mate-de-uruguay.png' ,categoria: 'Yerberos y Azucareros', name: "Azucarero de Cuero", price: "$2800" },
     { id: 6,  foto:'https://images.vexels.com/media/users/3/212928/isolated/preview/6c3b4f2bdc20b6cdc04e609ba4d77273-dibujado-a-mano-copa-de-mate-de-uruguay.png' ,categoria: 'Bombillas', name: "Bombilla Pico de Loro", price: "$1200" },
     { id: 7,  foto:'https://images.vexels.com/media/users/3/212928/isolated/preview/6c3b4f2bdc20b6cdc04e609ba4d77273-dibujado-a-mano-copa-de-mate-de-uruguay.png' ,categoria: 'Mates', name: "Mate Uruguayo", price: "$2300" }
-  ]
-  
- export const getFetch = new Promise((resolve, reject)=>{
-      // tareas que realizaremos
-      let url = 'acevedo.com'
-      
-      if (url === 'acevedo.com') {
-        setTimeout(() => {
-          resolve(productos)        
-        }, 1000);
-      }else{
-        reject('400 not found')
-      }
-  })
+]
+
+export const data = new Promise ((resolve, reject) => {
+    let url = "acevedo.com";
+    if (url === "acevedo.com") {
+        setTimeout( () => {
+            resolve (productos)
+        }, 200);
+    }else {
+        reject("Error 404");
+    };    
+})

@@ -1,38 +1,28 @@
-// import React, { Component } from 'react' 
-
-// const ComponenteClase = () => {
-    //  return(
-        // <div>ComponenteClase</div>
-        // )
-        // }
-        
-        // export { ComponenteClase }
-        
-        
-// export class ItemListContainer extends Component {
-// render () {
-
-import React from 'react';
+import { useState, useEffect } from 'react'
+import {data} from '../../getFech/data'
+import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
-import ItemCount from './ItemCount';
 
+function ItemListContainer ({greeting}) {
+    const [Productos, SetProductos] = useState([]);
+    
+    useEffect (() => {
+        data
+            .then((respuesta) => SetProductos(respuesta))
+            .catch(err => console.log(err))
+            .finally( ()=>console.log ("Cargando..."))
+    }, [])
 
-// function ItemListContainer  ( {greeting} ) {
-
-    // const [count, setCount] = useState(0) 
-    // let fecha = Date()
-
-    // const handleCount = () => {
-    //     setCount(count+1)
-    // }
-
-const ItemListContainer = () => {    
-    return (
-        <div>
-            <ItemCount></ItemCount>
-        </div>
+    return(
+        <>
+            <div className=''>
+                <h1 className=''>
+                    {greeting}
+                </h1>
+                <ItemList Productos = {Productos} />
+            </div>
+        </>
     )
 }
-        
-        
+
 export default ItemListContainer
