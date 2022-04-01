@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import {data} from '../../getFech/data'
+import ItemDetailContainer from '../../ItemDetailContainer/ItemDetailContainer';
+//import ItemDetail from '../ItemDetail/ItemDetail';
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
 
 function ItemListContainer ({greeting}) {
     const [Productos, SetProductos] = useState([]);
-    
+
     useEffect (() => {
         data
             .then((respuesta) => SetProductos(respuesta))
@@ -23,6 +25,7 @@ function ItemListContainer ({greeting}) {
             </div>
         </>
     )
+    <ItemDetailContainer><ItemDetailContainer></ItemDetailContainer>
 }
 
 export default ItemListContainer

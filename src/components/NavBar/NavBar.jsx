@@ -17,7 +17,7 @@
 // export { NavBar }
 
 import React, { Component } from 'react' 
-import CartWidget from '../CartWidget'
+import Cart from '../Cart/Cart'
 
 export class NavBar extends Component {
 render () {
@@ -50,11 +50,10 @@ return (
         <li class="nav-item">
           <a class="nav-link disabled"></a>
         </li>
+        <div>
+          <Cart></Cart>
+        </div>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar productos" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
     </div>
   </div>
 </nav>

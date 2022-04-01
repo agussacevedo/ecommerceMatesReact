@@ -32,13 +32,13 @@ export default function ItemCount ({initial, stock, onAdd}) {
                 <Card.Body>
 
                     <Card.Body className=''>
-                        <Button onClick={restar}>-</Button>
+                        <Button className='btn-primary' onClick={restar}>-</Button>
                         <label>{count}</label>
-                        <Button onClick={sumar}>+</Button>
+                        <Button className='btn-primary' onClick={sumar}>+</Button>
                     </Card.Body>
 
                     <Card.Body>
-                        <Button variant='primary' onClick={AgregarCarrito}>
+                        <Button className='btn-primary' variant='primary' onClick={AgregarCarrito}>
                             Agregar al carrito
                         </Button>
                     </Card.Body>
