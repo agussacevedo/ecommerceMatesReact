@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import './Item.css'
+import '../../getFech/data'
 
 const Item = ({prod}) => {
 
@@ -16,8 +17,7 @@ const Item = ({prod}) => {
         <div>
             <img src={prod.foto} alt=""></img>
             <h2>{prod.nombre}</h2>
-
-            <ItemCount initial={1} stock={5} onAdd={onAdd} />
+            <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
         </div>
     )
 }

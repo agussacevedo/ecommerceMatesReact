@@ -18,45 +18,31 @@
 
 import React, { Component } from 'react' 
 import Cart from '../Cart/Cart'
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 
 export class NavBar extends Component {
 render () {
 return (
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">TuMate|Arg®</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Acerca de Nosotros</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Productos
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Termeras</a></li>
-            <li><a class="dropdown-item" href="#">Mates y Bombillas</a></li>
-            <li><hr class="dropdown-divider"/></li>
-            <li><a class="dropdown-item" href="#">Yerberos y Azucareros</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled"></a>
-        </li>
-        <div>
-          <Cart></Cart>
-        </div>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <Navbar className='mx-5' bg="light" expand="lg">
+  
+    <Navbar.Brand href="#home">Tu Mate|Arg®</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="me-auto">
+        <Nav.Link href="#home">Home</Nav.Link>
+        <Nav.Link href="#link">Contacto</Nav.Link>
+        <NavDropdown title="Productos" id="basic-nav-dropdown">
+          <NavDropdown.Item href="#action/3.1">Mates y Bombillas</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2">Temeras</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.3">Yerberos y Azucareros</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action/3.4">Todos</NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+    </Navbar.Collapse>
+  
+  <Cart></Cart>
+</Navbar>
 )
 }
 }

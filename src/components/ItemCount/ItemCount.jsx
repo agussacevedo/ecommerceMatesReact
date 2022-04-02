@@ -4,6 +4,8 @@ import { useState } from 'react'
 
 export default function ItemCount ({initial, stock, onAdd}) {
 
+    console.log(stock)
+
     const [count, setCount] = useState (initial);
     const sumar = () => {
         if (count>=stock) {
@@ -21,11 +23,6 @@ export default function ItemCount ({initial, stock, onAdd}) {
         }
     }
 
-    const AgregarCarrito = () => {
-        onAdd(count);
-    }
-
-
     return (
         <>
             <Card className=''>
@@ -38,7 +35,7 @@ export default function ItemCount ({initial, stock, onAdd}) {
                     </Card.Body>
 
                     <Card.Body>
-                        <Button className='btn-primary' variant='primary' onClick={AgregarCarrito}>
+                        <Button className='btn-primary' variant='primary' onClick={onAdd}>
                             Agregar al carrito
                         </Button>
                     </Card.Body>

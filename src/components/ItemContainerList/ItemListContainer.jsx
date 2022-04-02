@@ -15,6 +15,8 @@ function ItemListContainer ({greeting}) {
             .finally( ()=>console.log ("Cargando..."))
     }, [])
 
+    
+
     return(
         <>
             <div className=''>
@@ -25,7 +27,6 @@ function ItemListContainer ({greeting}) {
             </div>
         </>
     )
-    <ItemDetailContainer><ItemDetailContainer></ItemDetailContainer>
+    
 }
-
 export default ItemListContainer
