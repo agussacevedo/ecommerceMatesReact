@@ -18,25 +18,28 @@
 
 import React, { Component } from 'react' 
 import Cart from '../Cart/Cart'
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Container, Nav, NavDropdown,} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 export class NavBar extends Component {
 render () {
 return (
   <Navbar className='mx-5' bg="light" expand="lg">
   
-    <Navbar.Brand href="#home">Tu Mate|Arg®</Navbar.Brand>
+    <Nav.Link as={Link} to='/'>
+    <Navbar.Brand >Tu Mate|Arg®</Navbar.Brand>
+    </Nav.Link>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
+        <Nav.Link as={Link} to='/'>Home</Nav.Link>
         <Nav.Link href="#link">Contacto</Nav.Link>
         <NavDropdown title="Productos" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Mates y Bombillas</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Temeras</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Yerberos y Azucareros</NavDropdown.Item>
+          <NavDropdown.Item><Nav.Link as={Link} to ='/categoria/matesYBombillas'> Mates y Bombillas</Nav.Link></NavDropdown.Item>
+          <NavDropdown.Item><Nav.Link as={Link} to ='/categoria/termeras'> Termeras</Nav.Link></NavDropdown.Item>
+          <NavDropdown.Item><Nav.Link as={Link} to ='/categoria/yerberosYAzucareros'> Yerberos y Azucareros</Nav.Link></NavDropdown.Item>
           <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Todos</NavDropdown.Item>
+          <NavDropdown.Item><Nav.Link as={Link} to ='/'> Todos</Nav.Link></NavDropdown.Item>
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>

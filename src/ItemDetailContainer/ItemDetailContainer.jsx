@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import ItemDetail from "./ItemDetail";
 import '../../src/components/Item/Item.css'
-import { data } from '../getFech/data';
+import { data, getItem } from '../getFech/getItem';
 
 function ItemDetailContainer () {
     const [product, setProduct] = useState ([]);
@@ -10,13 +10,13 @@ function ItemDetailContainer () {
     const {id} = useParams();
 
     useEffect (() => {
-        data
-        .then((response) => {
-            setProduct(response.find(prod => prod.id ===id))
+        getItem
+        .then((respuesta) => {
+            setProduct(respuesta.find((prod) => prod.id ===Number(id)))
         }
         )
-        .catch(error => console.log (error))
-        .finally(() => setLoading(false))
+        getItem.catch(error => console.log (error))
+        getItem.finally(() => setLoading(false))
     }, [id])
 
     return (

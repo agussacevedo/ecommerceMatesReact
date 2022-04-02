@@ -1,6 +1,7 @@
 import './ItemCount.css'
 import {Card, Button} from 'react-bootstrap'
 import { useState } from 'react'
+import {Link} from 'react-router-dom'
 
 export default function ItemCount ({initial, stock, onAdd}) {
 
@@ -32,9 +33,11 @@ export default function ItemCount ({initial, stock, onAdd}) {
                         <Button className='btn-primary' onClick={restar}>-</Button>
                         <label>{count}</label>
                         <Button className='btn-primary' onClick={sumar}>+</Button>
-                    </Card.Body>
-
-                    <Card.Body>
+                    
+                        <br></br>
+                        <br></br>
+                        
+                    
                         <Button className='btn-primary' variant='primary' onClick={onAdd}>
                             Agregar al carrito
                         </Button>

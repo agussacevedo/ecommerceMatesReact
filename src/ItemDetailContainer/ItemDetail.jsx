@@ -15,21 +15,21 @@ function ItemDetail ({product}) {
     return (
         <div className="ESTILO" key={product.id}>
             <div className="ESTILO">
-                <img className="ESTILO" src={product.url} alt={product.title} />
+                <img className="ESTILO" src={product.foto} alt={product.name} />
                 <div className="ESTILO">
-                    <h3>{product.title}</h3>
+                    <h3>{product.name}</h3>
                     <p>{product.price}</p>
                     <p>{product.description}</p>
                 </div>
             </div>
-            {Button === 'addButton' ?
+            
             <ItemCount initial={1} stock={product.sotck} onAdd={AgregarCarrito}/>
-            :
+            
             <div>
                 <Link to='./Cart'>
                     <button>Terminar mi compra</button>
                 </Link>
-            </div>}
+            </div>
         </div>        
                  
     )

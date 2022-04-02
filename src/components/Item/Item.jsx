@@ -1,7 +1,9 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import './Item.css'
-import '../../getFech/data'
+import '../../getFech/getItem'
+import {Link} from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 const Item = ({prod}) => {
 
@@ -18,6 +20,10 @@ const Item = ({prod}) => {
             <img src={prod.foto} alt=""></img>
             <h2>{prod.nombre}</h2>
             <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
+            <Link to={`/detail/${prod.id}`}><Button className='btn-primary m-2' variant='primary'>
+                Ver más
+            </Button>
+            </Link>
         </div>
     )
 }
