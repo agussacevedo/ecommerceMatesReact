@@ -18,12 +18,13 @@ const Item = ({prod}) => {
     return (
         <div>
             <img src={prod.foto} alt=""></img>
-            <h2>{prod.nombre}</h2>
-            <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
-            <Link to={`/detail/${prod.id}`}><Button className='btn-primary m-2' variant='primary'>
+            <h2>{prod.nombre}</h2>           
+            <Link to={`/detail/${prod.id}`}><Button className='btn-primary m-2' size="sm" variant='dark' active>
                 Ver más
-            </Button>
+            </Button>            
             </Link>
+
+            <ItemCount initial={1} stock={prod.stock} variant='dark' onAdd={onAdd} />
         </div>
     )
 }

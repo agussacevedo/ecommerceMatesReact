@@ -1,15 +1,19 @@
 import ItemCount from "../components/ItemCount/ItemCount";
 import '../components/Item/Item.css';
 import {Link} from "react-router-dom";
-import { Button } from "bootstrap";
+//import { Button } from "bootstrap";
+import { Card, Button } from "react-bootstrap";
+
 
 function ItemDetail ({product}) {
 
-
+    const FinalizarCompra = () => {
+        console.log(`Finalización`)
+    }
 
     const AgregarCarrito = () => {
-        //onAdd(count);
-        console.log("Hola Mundo")
+      //  onAdd(count);
+        console.log(`Carrito`)
     }
 
     return (
@@ -23,13 +27,14 @@ function ItemDetail ({product}) {
                 </div>
             </div>
             
-            <ItemCount initial={1} stock={product.sotck} onAdd={AgregarCarrito}/>
+            <Card.Body>
+            <ItemCount initial={1} stock={product.stock} onAdd={AgregarCarrito}/>
             
-            <div>
-                <Link to='./Cart'>
-                    <button>Terminar mi compra</button>
+                <Link to='../Cart.jsx'>
+                    <Button onClick={FinalizarCompra} className='btn-primary m-2' size="lg" variant='dark' active>Terminar mi compra</Button>
                 </Link>
-            </div>
+            </Card.Body>
+            
         </div>        
                  
     )
