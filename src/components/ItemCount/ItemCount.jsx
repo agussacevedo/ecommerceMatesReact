@@ -3,24 +3,21 @@ import {Card, Button} from 'react-bootstrap'
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
 
-export default function ItemCount ({initial, stock, onAdd}) {
+export default function ItemCount ({cantidad, setCantidad, stock, onAdd}) {
 
-    console.log(stock)
-
-    const [count, setCount] = useState (initial);
     const sumar = () => {
-        if (count>=stock) {
+        if (cantidad>=stock) {
             alert ('No hay más stock')
         } else {
-            setCount(count + 1);
+            setCantidad(cantidad + 1);
         }
     }
 
     const restar = () => {
-        if (count === 1 ){
+        if (cantidad === 1 ){
             alert ('No se puede seguir disminuyendo')
         } else {
-            setCount(count - 1);
+            setCantidad(cantidad - 1);
         }
     }
 
@@ -31,7 +28,7 @@ export default function ItemCount ({initial, stock, onAdd}) {
 
                     <Card.Body className=''>
                         <Button className='btn-primary' variant='secondary' onClick={restar}>-</Button>
-                        <label>{count}</label>
+                        <label>{cantidad}</label>
                         <Button className='btn-primary' variant='secondary' onClick={sumar}>+</Button>
                         <br></br>
                         <br></br>

@@ -17,9 +17,9 @@
 // export { NavBar }
 
 import React, { Component } from 'react' 
-import Cart from '../Cart/Cart'
 import { Navbar, Container, Nav, NavDropdown,} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import CartWidget from '../CartWidget'
 
 export class NavBar extends Component {
 render () {
@@ -27,13 +27,12 @@ return (
   <Navbar className='mx-5' bg="light" expand="lg">
   
     <Nav.Link as={Link} to='/'>
-    <Navbar.Brand >Tu Mate|Arg®</Navbar.Brand>
+    <Navbar.Brand >TuMate|Arg®</Navbar.Brand>
     </Nav.Link>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link as={Link} to='/'>Home</Nav.Link>
-        <Nav.Link href="#link">Contacto</Nav.Link>
         <NavDropdown title="Productos" id="basic-nav-dropdown">
           <NavDropdown.Item><Nav.Link as={Link} to ='/categoria/matesYBombillas'> Mates y Bombillas</Nav.Link></NavDropdown.Item>
           <NavDropdown.Item><Nav.Link as={Link} to ='/categoria/termeras'> Termeras</Nav.Link></NavDropdown.Item>
@@ -43,8 +42,9 @@ return (
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>
-  
-  <Cart></Cart>
+   
+    <CartWidget></CartWidget>
+
 </Navbar>
 )
 }
